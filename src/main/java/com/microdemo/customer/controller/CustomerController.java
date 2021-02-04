@@ -53,11 +53,4 @@ public class CustomerController {
     Customer savedCustomer = customerService.saveCustomerInfo(customer);
     return new ResponseEntity<>(savedCustomer, HttpStatus.CREATED);
   }
-
-  @GetMapping(value = "/accounts/{id}")
-  public ResponseEntity<Collection<Account>> getCustomerAllAccounts(@PathVariable(name = "id") String customerId) {
-    log.info("Fetch all customer information.");
-    List<Account> listCustomers = customerService.getCustomerAllAccounts(customerId);
-    return new ResponseEntity<>(listCustomers, HttpStatus.OK);
-  }
 }
